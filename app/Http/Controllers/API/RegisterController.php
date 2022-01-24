@@ -57,7 +57,7 @@ class RegisterController extends BaseController
 
                   $response =[
                'success'=>true,
-               'date'=>$success,
+               'data'=>$success,
                'message'=>'Uder login successfully'
            ];
            return response()->json($response,200);
