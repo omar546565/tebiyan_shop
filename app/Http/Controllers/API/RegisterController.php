@@ -58,13 +58,26 @@ class RegisterController extends BaseController
                   $response =[
                'success'=>true,
                'data'=>$success,
-               'message'=>'Uder login successfully'
+               'message'=>'تم تسجيل الدخول بنجاح'
            ];
            return response()->json($response,200);
        }
        else
        {
-           return $this->sendError('pleas check your data ' , ['error' => 'Unauthorised']);
+           $success['token'] = null;
+           $success['id'] = null;
+           $success['name'] = null;
+           $success['email'] = null;
+           $success['phone'] = null;
+           $success['image'] = null;
+           $success['points'] = null;
+           $success['credit'] = null;
+           $response =[
+               'success'=>false,
+               'data'=>$success,
+               'message'=>'لم يتم تسجيل الدخول تأكد من المعلومات'
+           ];
+           return response()->json($response,200);
        }
 
 
