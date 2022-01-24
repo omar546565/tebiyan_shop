@@ -34,7 +34,7 @@ class RegisterController extends BaseController
         $success['name'] = $user->name;
               $response =[
            'success'=>true,
-           'date'=>$success,
+           'data'=>$success,
            'message'=>'Uder registered successfully'
        ];
        return response()->json($response,200);
@@ -75,7 +75,7 @@ class RegisterController extends BaseController
        $success['email'] = $user->email;
        $response =[
            'success'=>true,
-           'date'=>$success,
+           'data'=>$success,
            'message'=>' successfully'
        ];
        return response()->json($response,200);
@@ -96,7 +96,7 @@ class RegisterController extends BaseController
 
        $response =[
            'success'=>true,
-           'date'=>$user,
+           'data'=>$user,
            'message'=>'update successfully'
        ];
        return response()->json($response,200);

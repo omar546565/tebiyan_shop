@@ -73,7 +73,7 @@ class AuthController extends Controller
         $success['email'] = $user->email;
         $response =[
             'success'=>true,
-            'date'=>$success,
+            'data'=>$success,
             'message'=>' successfully'
         ];
         return response()->json($response,200);
