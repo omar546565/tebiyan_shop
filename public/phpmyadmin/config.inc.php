@@ -106,7 +106,7 @@ $cfg['AllowThirdPartyFraming'] = false;
  *
  * @global string $cfg['blowfish_secret']
  */
-$cfg['blowfish_secret'] = 'wmIKKKI4uSbkAPVm7p41lEU3XGsxcrdI';
+$cfg['blowfish_secret'] = 'oPAgDDpxwqhjFJXmLNBK8PO6oKQUZbUJ';
 
 
 /*******************************************************************************
