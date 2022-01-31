@@ -27,6 +27,12 @@ Route::post('logout2', 'AuthController@logout');
 Route::post('refresh2', 'AuthController@refresh');
 Route::post('me2', 'AuthController@me');
 
+Route::middleware('auth:api')->group(function ()
+{
+    Route::get('home','API\HomeController@index2');
+
+});
+
 Route::middleware('auth:api2')->group(function ()
 {
     Route::get('index2','AuthController@index2');
