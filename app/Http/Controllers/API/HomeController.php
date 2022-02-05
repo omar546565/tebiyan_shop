@@ -64,16 +64,19 @@ class HomeController extends BaseController
                 ]);
 
                 $message= 'تم الإزالة من المفضلة';
+                $update= 0;
             }else{
                 Product::where('id',$request->product_id)->update([
                     'in_favorites' => 'true'
                 ]);
                 $message= 'تم الإضافة للمفضلة';
+                $update= 1;
             }
             $Products=Product::find($request->product_id);
             $response =[
                 'status'=>true,
                 'message'=>$message,
+                'update'=>$update,
                  'products'=>$Products
             ];
         return response()->json($response,200);
