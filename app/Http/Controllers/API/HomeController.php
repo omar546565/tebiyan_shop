@@ -83,6 +83,19 @@ class HomeController extends BaseController
 
 
      }
+        public  function  Favoritesget(){
+
+            $Products=Product::where('in_favorites','true')->get();
+            $response =[
+                'status'=>true,
+                'message'=>'null',
+
+                 'products'=>$Products
+            ];
+        return response()->json($response,200);
+
+
+     }
 
 
 

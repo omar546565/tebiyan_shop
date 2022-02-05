@@ -31,6 +31,7 @@ Route::middleware('auth:api')->group(function ()
 {
     Route::get('home','API\HomeController@index2');
     Route::get('categories','API\HomeController@Categories');
+    Route::get('favorites','API\HomeController@FavoritesGet');
     Route::post('favorites','API\HomeController@Favorites');
 
 });
