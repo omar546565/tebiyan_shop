@@ -54,6 +54,36 @@ class HomeController extends BaseController
 
 
      }
+        public  function  Favorites(Request $request){
+
+
+            $Product=Product::find($request->product_id);
+            if ($Product->inFavorites == 'true'){
+                Product::where('id',$request->product_id)->update([
+                    'inFavorites' => 'false'
+                ]);
+
+                $message= 'تم الحذف بنجاح';
+            }else{
+                Product::where('id',$request->product_id)->update([
+                    'inFavorites' => 'true'
+                ]);
+                $message= 'تم الإضافة للمفضلة';
+            }
+
+            $response =[
+                'status'=>true,
+                'message'=>$message,
+                'data'=>[
+                    'products'=>$Product
+
+                ],
+
+            ];
+        return response()->json($response,200);
+
+
+     }
 
 
 
