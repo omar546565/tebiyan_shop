@@ -60,13 +60,13 @@ class HomeController extends BaseController
             $Product=Product::find($request->product_id);
             if ($Product->inFavorites == 'true'){
                 Product::where('id',$request->product_id)->update([
-                    'inFavorites' => 'false'
+                    'in_favorites' => 'false'
                 ]);
 
                 $message= 'تم الحذف بنجاح';
             }else{
                 Product::where('id',$request->product_id)->update([
-                    'inFavorites' => 'true'
+                    'in_favorites' => 'true'
                 ]);
                 $message= 'تم الإضافة للمفضلة';
             }
