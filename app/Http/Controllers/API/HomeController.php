@@ -46,7 +46,7 @@ class HomeController extends BaseController
          $Categorie=Categorie::paginate(4);
         $response =[
             'status'=>true,
-            'message'=>'null',
+            'message'=>'successfully',
             'data'=>[
                 'data'=>$Categorie,
 
