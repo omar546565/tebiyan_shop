@@ -58,7 +58,7 @@ class HomeController extends BaseController
 
 
             $Product=Product::find($request->product_id);
-            if ($Product->inFavorites == 'true'){
+            if ($Product->in_favorites == 'true'){
                 Product::where('id',$request->product_id)->update([
                     'in_favorites' => 'false'
                 ]);
