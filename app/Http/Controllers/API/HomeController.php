@@ -63,7 +63,7 @@ class HomeController extends BaseController
                     'in_favorites' => 'false'
                 ]);
 
-                $message= 'تم الحذف بنجاح';
+                $message= 'تم الإزالة من المفضلة';
             }else{
                 Product::where('id',$request->product_id)->update([
                     'in_favorites' => 'true'
