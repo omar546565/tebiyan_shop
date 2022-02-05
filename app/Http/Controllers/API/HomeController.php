@@ -47,11 +47,7 @@ class HomeController extends BaseController
         $response =[
             'status'=>true,
             'message'=>'successfully',
-            'data'=>[
-                'data'=>$Categorie,
-
-
-            ],
+            'data'=>$Categorie,
 
         ];
         return response()->json($response,200);
