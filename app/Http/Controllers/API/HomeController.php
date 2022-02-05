@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 
 
 use App\Models\Banner;
+use App\Models\Categorie;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,10 +27,29 @@ class HomeController extends BaseController
          $Banner=Banner::all();
         $response =[
             'status'=>true,
-            'message'=>' successfully',
+            'message'=>'successfully',
             'data'=>[
                 'banners'=>$Banner,
                 'products'=>$Product
+
+            ],
+
+        ];
+        return response()->json($response,200);
+
+
+     }
+        public  function  Categories(){
+
+
+
+         $Categorie=Categorie::paginate(4);
+        $response =[
+            'status'=>true,
+            'message'=>'null',
+            'data'=>[
+                'data'=>$Categorie,
+
 
             ],
 
