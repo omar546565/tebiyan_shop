@@ -31,10 +31,10 @@ Route::middleware('auth:api')->group(function ()
 {
     Route::get('home','API\HomeController@index2');
     Route::get('categories','API\HomeController@Categories');
-
+    Route::post('favorites','API\HomeController@Favorites');
 
 });
-Route::post('favorites','API\HomeController@Favorites');
+
 Route::middleware('auth:api2')->group(function ()
 {
     Route::get('index2','AuthController@index2');
