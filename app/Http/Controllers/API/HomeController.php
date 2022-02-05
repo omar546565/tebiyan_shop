@@ -70,12 +70,12 @@ class HomeController extends BaseController
                 ]);
                 $message= 'تم الإضافة للمفضلة';
             }
-
+            $Products=Product::find($request->product_id);
             $response =[
                 'status'=>true,
                 'message'=>$message,
                 'data'=>[
-                    'products'=>$Product
+                    'products'=>$Products
 
                 ],
 
