@@ -32,7 +32,11 @@ class RegisterController extends BaseController
 
         $user = User::create($input);
         $success['token'] = $user->createToken('muhaaaaamd')->accessToken;
+        $success['id'] = $user->id;
         $success['name'] = $user->name;
+        $success['email'] = $user->email;
+        $success['phone'] = $user->phone;
+        $success['image'] = $user->image;
               $response =[
            'success'=>true,
            'data'=>$success,
