@@ -57,16 +57,22 @@ class HomeController extends BaseController
      }
         public  function  Profile(){
 
+            $user = Auth::user();
+            $success['token'] = $user->createToken('muhaaaaamd')->accessToken;
+            $success['id'] = $user->id;
+            $success['name'] = $user->name;
+            $success['email'] = $user->email;
+            $success['phone'] = $user->phone;
+            $success['image'] = $user->image;
+            $success['points'] = $user->points;
+            $success['credit'] = $user->credit;
 
-
-         $User=User::select('id','name','email','phone','image','points','credit')->get();
-        $response =[
-            'status'=>true,
-            'message'=>'successfully',
-            'data'=>$User,
-
-        ];
-        return response()->json($response,200);
+            $response =[
+                'success'=>true,
+                'data'=>$success,
+                'message'=>'تم تسجيل الدخول بنجاح'
+            ];
+            return response()->json($response,200);
 
 
      }
