@@ -107,10 +107,17 @@ class RegisterController extends BaseController
 
 
        $input = $request->all() ;
+        if ($input['password'] == null ){
+            $user->name=$input['name'];
+            $user->phone=$input['phone'];
+            $user->save();
+        }else{
+            $user->name=$input['name'];
+            $user->phone=$input['phone'];
+            $user->password=Hash::make( $input['password']);
+            $user->save();
+        }
 
-       $user->name=$input['name'];
-       $user->password=Hash::make( $input['password']);
-       $user->save();
 
        $response =[
            'success'=>true,
