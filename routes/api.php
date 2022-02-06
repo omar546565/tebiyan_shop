@@ -61,7 +61,7 @@ Route::middleware('auth:api')->get('/user/revoke', function (Request $request) {
 Route::middleware('auth:api')->group(function ()
 {
     Route::get('index','API\RegisterController@index');
-    Route::post('updateuser','API\RegisterController@UpdateUser');
+    Route::put('updateuser','API\RegisterController@UpdateUser');
 });
 /*Route::middleware('auth:api')->group(function ()
 {
