@@ -7,6 +7,7 @@ namespace App\Http\Controllers\API;
 use App\Models\Banner;
 use App\Models\Categorie;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,6 +49,21 @@ class HomeController extends BaseController
             'status'=>true,
             'message'=>'successfully',
             'data'=>$Categorie,
+
+        ];
+        return response()->json($response,200);
+
+
+     }
+        public  function  Profile(){
+
+
+
+         $User=User::select('id','name','email','phone','image','points','credit')->get();
+        $response =[
+            'status'=>true,
+            'message'=>'successfully',
+            'data'=>$User,
 
         ];
         return response()->json($response,200);
