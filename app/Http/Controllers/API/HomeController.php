@@ -117,7 +117,7 @@ class HomeController extends BaseController
                 'status'=>true,
                 'message'=>$message,
                 'update'=>$update,
-                 'data'=>$Products
+                 'Products'=>$Products
             ];
         return response()->json($response,200);
 
