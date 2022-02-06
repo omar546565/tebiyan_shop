@@ -104,6 +104,25 @@ class HomeController extends BaseController
 
 
      }
+        public  function  productsSearch(Request $request){
+
+
+            $Products=Product::where('name', 'like', '%'.$request->text.'%')->get();
+
+                $message= 'جاري البحث';
+                $update= 0;
+
+
+            $response =[
+                'status'=>true,
+                'message'=>$message,
+                'update'=>$update,
+                 'products'=>$Products
+            ];
+        return response()->json($response,200);
+
+
+     }
         public  function  Favoritesget(){
 
             $Products=Product::where('in_favorites','true')->get();
