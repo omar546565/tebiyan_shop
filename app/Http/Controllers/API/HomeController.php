@@ -58,7 +58,6 @@ class HomeController extends BaseController
         public  function  Profile(){
 
             $user = Auth::user();
-            $success['token'] = $user->createToken('muhaaaaamd')->accessToken;
             $success['id'] = $user->id;
             $success['name'] = $user->name;
             $success['email'] = $user->email;
