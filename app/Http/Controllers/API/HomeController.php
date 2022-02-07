@@ -107,7 +107,7 @@ class HomeController extends BaseController
         public  function  productsSearch(Request $request){
 
 
-            $Products=Product::where('name','like', '%'.$request->text.'%')->get();
+            $Products=Product::where('name','like', $request->text)->get();
 
                 $message= 'جاري البحث';
                 $update= 0;
