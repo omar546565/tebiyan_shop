@@ -37,7 +37,7 @@ Route::middleware('auth:api')->group(function ()
     Route::post('products/search','API\HomeController@productsSearch');
 
 });
-
+Route::get('homeapi','API\HomeController@index2');
 Route::middleware('auth:api2')->group(function ()
 {
     Route::get('index2','AuthController@index2');
